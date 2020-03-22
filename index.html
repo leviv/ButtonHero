@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Button Hero</title>
+  <meta charset="utf-8" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Judson&family=Quando&display=swap" rel="stylesheet">
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.10.0/firebase-database.js"></script>
+</head>
+
+<body>
+  <div id="content">
+    <div id="text">
+      <h1><span>Button Hero</span></h1>
+      <h4>Instructions</h4>
+      <p>To clear out the current queue of players and reset the game, press the "Reset Game" button. On every device that you wish to play on, type your name into the provided box, and press "Add Username" (your username must be unique). Once ready, press the large "Press Me" button that will appear on one of the players devices.</p>
+
+      <div id="username">
+        <label for="username">Username: </label>
+        <input type="text" name="username" id="username-input" placeholder="User1">
+        <button onclick="addUsername()" class="button button-primary">Add Username</button>
+        <button onclick="reset()" class="button button-secondary">Reset Game</button>
+      </div>
+    </div>
+
+    <div id="button" onclick="clickButton()">
+      <div id="button-text">
+        <h3 class="show-on">Press Me!</h3>
+        <h3 class="show-off">Don't Press</h3>
+        <h2 class="show-off">It is <span id="whose-turn"></span>'s turn</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- load JS here so it doesn't block the rendering of the page -->
+  <script src="howler.min.js"></script>
+  <script src="scripts.js"></script>
+  </body>
+</html>
